@@ -23,8 +23,8 @@ const sendEmailController = (req, res) => {
     }
     //email matter
     transporter.sendMail({
-      to:"manishakumari29101994@gmail.com",
       from:"manishakumari29101994@gmail.com",
+      to:email,
       subject: "Regarding Mern Portfolio App",
       html: `
         <h5>Detail Information</h5>
