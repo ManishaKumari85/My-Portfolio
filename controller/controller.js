@@ -10,7 +10,7 @@ const transporter = nodemailer.createTransport(
   })
 );
 
-const sendEmailController = (req, res) => {
+const sendEmailController = async (req, res) => {
   try {
     const { name, email, msg } = req.body;
 
@@ -22,9 +22,9 @@ const sendEmailController = (req, res) => {
       });
     }
     //email matter
-    transporter.sendMail({
-      from:"manishakumari29101994@gmail.com",
+    await transporter.sendMail({
       to:email,
+      from:"manishakumari29101994@gmail.com",
       subject: "Regarding Mern Portfolio App",
       html: `
         <h5>Detail Information</h5>
